@@ -1,6 +1,10 @@
-os: osx
-
 language: go
+
+os: osx
+osx_image: xcode10.1
+
+before_install:
+  - brew update
 
 script:
   - brew tap vultr/vultr-cli
