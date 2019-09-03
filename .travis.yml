@@ -1,6 +1,8 @@
 os: osx
 
+language: go
+
 script:
-  brew tap vultr/vultr-cli
-  brew install vultr-cli
-  brew test vultr-cli
+  - brew tap vultr/vultr-cli
+  - brew install vultr-cli
+  - brew test vultr-cli
