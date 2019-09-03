@@ -1,0 +1,6 @@
+os: osx
+
+script:
+  brew tap vultr/vultr-cli
+  brew install vultr-cli
+  brew test vultr-cli
