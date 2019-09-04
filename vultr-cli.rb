@@ -1,8 +1,8 @@
 class VultrCli < Formula
     desc "Official command-line tool for Vultr services"
     homepage "https://github.com/vultr/vultr-cli"
-    url "https://github.com/vultr/vultr-cli/archive/v0.1.5.tar.gz"
-    sha256 "857a3d3412e10f163d51dada8d5f7bfa230cbf644f5d8a890ee32a17fc95d77d"
+    url "https://github.com/vultr/vultr-cli/archive/v0.1.6.tar.gz"
+    sha256 "bb075dde1ea754e868e688ef0590f6041bb67a4ba27a7bc5aea2c43698e51bbd"
     head "https://github.com/vultr/vultr-cli.git"
   
     depends_on "go" => :build
