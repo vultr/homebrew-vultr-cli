@@ -1,11 +1,11 @@
 class VultrCli < Formula
   desc "Official command-line tool for Vultr services"
   homepage "https://github.com/vultr/vultr-cli"
-  url "https://github.com/vultr/vultr-cli/releases/download/v0.1.8/vultr-cli_0.1.8_macOs_64-bit.tar.gz"
-  version "0.1.8"
+  url "https://github.com/vultr/vultr-cli/archive/v0.1.8.tar.gz"
   sha256 "5387937f9151699938a3d516f3b39539237e7a0f201ae318abfb3158c843961c"
+  head "https://github.com/vultr/vultr-cli.git"
 
-  depends_on "go"
+  depends_on "go" => :build
 
   def install
     ENV["GOPATH"] = buildpath
