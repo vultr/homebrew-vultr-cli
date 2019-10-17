@@ -6,12 +6,12 @@ class VultrCli < Formula
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/vultr/vultr-cli/releases/v0.1.8/vultr-cli_0.1.8_macOs_64-bit.tar.gz"
-    sha256 "992be0d50b4e1bfda6c8a3649a7fe2747b72503c0427f648e3c91cfc6ee8d458"
+    url "https://github.com/vultr/vultr-cli/releases/download/v0.1.8/vultr-cli_0.1.8_macOs_64-bit.tar.gz"
+    sha256 "5387937f9151699938a3d516f3b39539237e7a0f201ae318abfb3158c843961c"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/vultr/vultr-cli/releases/v0.1.8/vultr-cli_0.1.8_linux_64-bit.tar.gz"
-      sha256 "50284539ae5950b584ad3bd54494170b65bfb8341784ab13e375b4077fa18ddd"
+      url "https://github.com/vultr/vultr-cli/releases/download/v0.1.8/vultr-cli_0.1.8_linux_64-bit.tar.gz"
+      sha256 "6bd7f67ae896274ba80c9355734a97cf24fbcf0058b87219f72c6d5e284b0b2b"
     end
   end
   
