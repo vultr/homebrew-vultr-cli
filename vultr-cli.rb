@@ -1,8 +1,8 @@
 class VultrCli < Formula
-  desc "Official command-line tool for Vultr services"
-  homepage "https://github.com/vultr/vultr-cli"
+  desc "Official command line tool for Vultr services"
+  homepage ""
   url "https://github.com/vultr/vultr-cli/archive/v0.1.8.tar.gz"
-  sha256 "5387937f9151699938a3d516f3b39539237e7a0f201ae318abfb3158c843961c"
+  sha256 "6d0d0b1176621c16a78417b90a388968e1ba88c629f78cc665c85b94b80b89c5"
   head "https://github.com/vultr/vultr-cli.git"
 
   depends_on "go" => :build
@@ -21,6 +21,6 @@ class VultrCli < Formula
 
   test do
     output = shell_output("#{bin}/vultr-cli version 2>&1", 1)
-    assert_match "Please export your VULTR API key as an environment variable, eg:\nexport VULTR_API_KEY='<api_key_from_vultr_account>'\n", output
+    assert_match "Please export your VULTR API Key", output
   end
 end
