@@ -14,16 +14,16 @@ class VultrCli < Formula
       sha256 "df67caefc3773aeed632b3321e68d88a9f5a71a8adbaba7bdb8d693d50de3097"
     end
   end
-  
+
   depends_on "go"
 
   def install
     bin.install "vultr-cli"
     prefix.install_metafiles
-    end
   end
 
   test do
     output = shell_output("#{bin}/vultr-cli version 2>&1", 1)
     assert_match "Please export your VULTR API key as an environment variable, eg:\nexport VULTR_API_KEY='<api_key_from_vultr_account>'\n", output
   end
+end
