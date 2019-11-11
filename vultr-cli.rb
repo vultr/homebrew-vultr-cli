@@ -27,4 +27,3 @@ class VultrCli < Formula
     output = shell_output("#{bin}/vultr-cli version 2>&1", 1)
     assert_match "Please export your VULTR API key as an environment variable, eg:\nexport VULTR_API_KEY='<api_key_from_vultr_account>'\n", output
   end
-end
