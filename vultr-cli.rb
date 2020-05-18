@@ -2,16 +2,16 @@
 class VultrCli < Formula
   desc "Official command-line tool for Vultr services"
   homepage "https://github.com/vultr/vultr-cli"
-  version "0.3.0"
+  version "0.3.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/vultr/vultr-cli/releases/download/v0.3.0/vultr-cli_0.3.0_macOs_64-bit.tar.gz"
-    sha256 "05b438baa70eb6072d171ca9d2adcbb4962f608477e5b75d10ab0757dfabb689"
+    url "https://github.com/vultr/vultr-cli/releases/download/v0.3.1/vultr-cli_0.3.1_macOs_64-bit.tar.gz"
+    sha256 "ac0e788dc1ac9f8f1bdadfd6d0bcc0ec93e71933e6b901012a1804f9adce03e9"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/vultr/vultr-cli/releases/download/v0.3.0/vultr-cli_0.3.0_linux_64-bit.tar.gz"
-      sha256 "9fd82848e11a0ef3d49016dc32513d4e2bef64319f1ce119fad0cf3af2d93a28"
+      url "https://github.com/vultr/vultr-cli/releases/download/v0.3.1/vultr-cli_0.3.1_linux_64-bit.tar.gz"
+      sha256 "265ae2346107609f6fa79a7a713aac5b77b4234ad010d1ea5c23765d591d3e0b"
     end
   end
   
