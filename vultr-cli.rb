@@ -2,18 +2,18 @@
 class VultrCli < Formula
   desc "Official command-line tool for Vultr services"
   homepage "https://github.com/vultr/vultr-cli"
-  version "2.0.0"
+  version "2.0.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/vultr/vultr-cli/releases/download/v2.0.0/vultr-cli_2.0.0_macOs_64-bit.tar.gz"
-    sha256 "f106ff7f00b01b8f8370b3206ee8614cf2a2e5e377536708e0b56a7f7e65a962"
+    url "https://github.com/vultr/vultr-cli/releases/download/v2.0.1/vultr-cli_2.0.1_macOs_64-bit.tar.gz"
+    sha256 "cad43a80d9219209fb9d48e315ce0ffbb7642bdf7a5b7c8095584a029b04dfe8"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/vultr/vultr-cli/releases/download/v2.0.0/vultr-cli_2.0.0_linux_64-bit.tar.gz"
-    sha256 "fe835a5598ac8ecbf6c88bdf2e3b101fa45b20bbe91c9b4bae584aaf0a364e6f"
+    url "https://github.com/vultr/vultr-cli/releases/download/v2.0.1/vultr-cli_2.0.1_linux_64-bit.tar.gz"
+    sha256 "5196701d550531a72cd88c1cda3fbe4caef15002d7dce5d3d80ceaf5354f1ed0"
   end
-  
+
   depends_on "go"
 
   def install
@@ -23,6 +23,6 @@ class VultrCli < Formula
 
   test do
     output = shell_output("#{bin}/vultr-cli version 2>&1", 1)
-    assert_match "Please export your VULTR API key as an environment variable, eg:\nexport VULTR_API_KEY='<api_key_from_vultr_account>'\n", output
+    assert_match "Please export your VULTR API key as an environment variable or add `api-key` to your config file, eg:\nexport VULTR_API_KEY='<api_key_from_vultr_account>'\n", output
   end
 end
