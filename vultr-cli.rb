@@ -5,24 +5,29 @@
 class VultrCli < Formula
   desc "Official command-line tool for Vultr services"
   homepage "https://github.com/vultr/vultr-cli"
-  version "2.5.2"
+  version "2.5.3"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/vultr/vultr-cli/releases/download/v2.5.2/vultr-cli_2.5.2_macOs_64-bit.tar.gz"
-    sha256 "93f814acedaa4e5c8064450bd1b0ea703215cc99772ae36e6c891345c22788ed"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/vultr/vultr-cli/releases/download/v2.5.3/vultr-cli_2.5.3_macOs_64-bit.tar.gz"
+      sha256 "ce819cbdf2580a1019970411e07f91b7db73f0f177ff485d284a102ae5a93c5a"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/vultr/vultr-cli/releases/download/v2.5.3/vultr-cli_2.5.3_macOs_arm64-bit.tar.gz"
+      sha256 "aa1d2dbddbce72aefbf49b56bb83e141178b429d3e4d5da73554ba876c8ce702"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/vultr/vultr-cli/releases/download/v2.5.2/vultr-cli_2.5.2_macOs_arm64-bit.tar.gz"
-    sha256 "3103e1ec091d482c91ef68690fbc56fe716d986303122aa45bff3231c40ac429"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/vultr/vultr-cli/releases/download/v2.5.2/vultr-cli_2.5.2_linux_64-bit.tar.gz"
-    sha256 "001457bd40b50393f48b54ab839c5c69b294d29289eaf5db9a5b33deb98c1c47"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/vultr/vultr-cli/releases/download/v2.5.2/vultr-cli_2.5.2_linux_arm64-bit.tar.gz"
-    sha256 "91eb633309202f9d1c68e9ce2c4ca98fde9b20afa0b20c35566f4de6cafc9915"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/vultr/vultr-cli/releases/download/v2.5.3/vultr-cli_2.5.3_linux_64-bit.tar.gz"
+      sha256 "e971a3147d7630073be866871145a51633d14132bcc59d1f55703d950fc9db4e"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/vultr/vultr-cli/releases/download/v2.5.3/vultr-cli_2.5.3_linux_arm64-bit.tar.gz"
+      sha256 "68cd16a05eddd0e58d2bc2d79a1cb44c13ca3166c492a413522f1b7f1746bd5a"
+    end
   end
 
   depends_on "go"
