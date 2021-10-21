@@ -5,28 +5,28 @@
 class VultrCli < Formula
   desc "Official command-line tool for Vultr services"
   homepage "https://github.com/vultr/vultr-cli"
-  version "2.8.4"
+  version "2.8.5"
   bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/vultr/vultr-cli/releases/download/v2.8.4/vultr-cli_2.8.4_macOs_64-bit.tar.gz"
-      sha256 "a6b0b4783dbbc2aa973c54cc8a9476c24dbc71d569b9ae232f05ba498122e41f"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/vultr/vultr-cli/releases/download/v2.8.4/vultr-cli_2.8.4_macOs_arm64-bit.tar.gz"
-      sha256 "79403f45bfb8faf42ecca8363182cb001501f7eae629482322244161b629e9ed"
+      url "https://github.com/vultr/vultr-cli/releases/download/v2.8.5/vultr-cli_2.8.5_macOs_arm64-bit.tar.gz"
+      sha256 "a81938ccd8e92acc97408bb981256430cf6f1fd4f6b78c9988b1af233e9b5622"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/vultr/vultr-cli/releases/download/v2.8.5/vultr-cli_2.8.5_macOs_64-bit.tar.gz"
+      sha256 "37429a638e6018b0422b46d865b4665c698a9527de223aaa8944afdc8daf14c3"
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/vultr/vultr-cli/releases/download/v2.8.4/vultr-cli_2.8.4_linux_64-bit.tar.gz"
-      sha256 "63ddce32bdb4ad2e0736cb02efc5b12d149dcb431c193e60504bc13b774c3670"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/vultr/vultr-cli/releases/download/v2.8.4/vultr-cli_2.8.4_linux_arm64-bit.tar.gz"
-      sha256 "b56d323e45ea90f4e5054bc24b4d7fe7cf58cf749e03c502757e4662c72a0da1"
+      url "https://github.com/vultr/vultr-cli/releases/download/v2.8.5/vultr-cli_2.8.5_linux_arm64-bit.tar.gz"
+      sha256 "7f27b0003cfcb3db85090f71218f509788932d1f1cf72213cb758a3720ca580c"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/vultr/vultr-cli/releases/download/v2.8.5/vultr-cli_2.8.5_linux_64-bit.tar.gz"
+      sha256 "899d356923ad0c570f7f0f440207b51f2749d9262521e30cc6aea947e511f649"
     end
   end
 
