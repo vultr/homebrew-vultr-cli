@@ -5,21 +5,23 @@
 class VultrCli < Formula
   desc "Official command-line tool for Vultr services"
   homepage "https://github.com/vultr/vultr-cli"
-  version "2.14.2"
+  version "2.15.0"
+
+  depends_on "go"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/vultr/vultr-cli/releases/download/v2.14.2/vultr-cli_2.14.2_macOs_64-bit.tar.gz"
-      sha256 "8b5900f86ee7aefde6f7bf37e14f646a727d5ac37e0c74fb6ebbf525d9ca4356"
+    if Hardware::CPU.arm?
+      url "https://github.com/vultr/vultr-cli/releases/download/v2.15.0/vultr-cli_2.15.0_macOs_arm64-bit.tar.gz"
+      sha256 "adf7b23e8b653f5db28d32bf0dac8dbbaafd732f2096961a3168de988a5d7b78"
 
       def install
         bin.install "vultr-cli"
         prefix.install_metafiles
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/vultr/vultr-cli/releases/download/v2.14.2/vultr-cli_2.14.2_macOs_arm64-bit.tar.gz"
-      sha256 "4a8fe5289eacb725e6e5043b1ce193bf4a8b6a0ea8ac988c9f50bffe840052f8"
+    if Hardware::CPU.intel?
+      url "https://github.com/vultr/vultr-cli/releases/download/v2.15.0/vultr-cli_2.15.0_macOs_64-bit.tar.gz"
+      sha256 "868e4ff519062e512eaa679a0df284bf96a86b48c0b7679e5c8e7507cba55c79"
 
       def install
         bin.install "vultr-cli"
@@ -29,9 +31,18 @@ class VultrCli < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/vultr/vultr-cli/releases/download/v2.15.0/vultr-cli_2.15.0_linux_armv6.tar.gz"
+      sha256 "2c82b7ab6daea88b1910a0bfa5227f655256b8544528f0e2589a458a74671ccc"
+
+      def install
+        bin.install "vultr-cli"
+        prefix.install_metafiles
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/vultr/vultr-cli/releases/download/v2.14.2/vultr-cli_2.14.2_linux_64-bit.tar.gz"
-      sha256 "14e9bf2ba9bbf88aae24bd165fd72ad20711b90da837aa3aa07b4b537fe69564"
+      url "https://github.com/vultr/vultr-cli/releases/download/v2.15.0/vultr-cli_2.15.0_linux_64-bit.tar.gz"
+      sha256 "9acc33a93a23c2d28f3c6284a1db02476d9b52861d792d89aacb964f64f0fbfc"
 
       def install
         bin.install "vultr-cli"
@@ -39,8 +50,8 @@ class VultrCli < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/vultr/vultr-cli/releases/download/v2.14.2/vultr-cli_2.14.2_linux_arm64-bit.tar.gz"
-      sha256 "4617bf54fa3645cfe87b10243794598eded94ed7f5be7a74f0d765c62480ae6c"
+      url "https://github.com/vultr/vultr-cli/releases/download/v2.15.0/vultr-cli_2.15.0_linux_arm64-bit.tar.gz"
+      sha256 "0df586a1672c7bb758cfb08af03c3246ada29a2a343b54f7f00ce64c47b7de45"
 
       def install
         bin.install "vultr-cli"
@@ -48,8 +59,6 @@ class VultrCli < Formula
       end
     end
   end
-
-  depends_on "go"
 
   test do
     output = shell_output("#{bin}/vultr-cli version 2>&1", 1)
